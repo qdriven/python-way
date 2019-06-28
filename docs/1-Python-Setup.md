@@ -48,7 +48,7 @@ IDE的意思就是集成开发环境工具，可以在这个工具中编写Pytho
 - 专业版 - 收费
 
 按照安装指引安装好之后，我们可以打开pycharm，创建第一个python项目,如下图所示:
-![img](pycharm-1.jpg)
+![img](img/pycharm-1.jpg)
 
 以下针对图示是一些说明:
 1. 从创建pure python项目开始
