@@ -1,0 +1,77 @@
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%">
+<col width="17%">
+<col width="30%">
+<col width="37%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Iterator</th>
+<th class="head">Arguments</th>
+<th class="head">Results</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#itertools.accumulate" title="itertools.accumulate"><code class="xref py py-func docutils literal"><span class="pre">accumulate()</span></code></a></td>
+<td>p [,func]</td>
+<td>p0, p0+p1, p0+p1+p2, ...</td>
+<td><code class="docutils literal"><span class="pre">accumulate([1,2,3,4,5])</span> <span class="pre">--&gt;</span> <span class="pre">1</span> <span class="pre">3</span> <span class="pre">6</span> <span class="pre">10</span> <span class="pre">15</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#itertools.chain" title="itertools.chain"><code class="xref py py-func docutils literal"><span class="pre">chain()</span></code></a></td>
+<td>p, q, ...</td>
+<td>p0, p1, ... plast, q0, q1, ...</td>
+<td><code class="docutils literal"><span class="pre">chain('ABC',</span> <span class="pre">'DEF')</span> <span class="pre">--&gt;</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">D</span> <span class="pre">E</span> <span class="pre">F</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#itertools.chain.from_iterable" title="itertools.chain.from_iterable"><code class="xref py py-func docutils literal"><span class="pre">chain.from_iterable()</span></code></a></td>
+<td>iterable</td>
+<td>p0, p1, ... plast, q0, q1, ...</td>
+<td><code class="docutils literal"><span class="pre">chain.from_iterable(['ABC',</span> <span class="pre">'DEF'])</span> <span class="pre">--&gt;</span> <span class="pre">A</span> <span class="pre">B</span> <span class="pre">C</span> <span class="pre">D</span> <span class="pre">E</span> <span class="pre">F</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#itertools.compress" title="itertools.compress"><code class="xref py py-func docutils literal"><span class="pre">compress()</span></code></a></td>
+<td>data, selectors</td>
+<td>(d[0] if s[0]), (d[1] if s[1]), ...</td>
+<td><code class="docutils literal"><span class="pre">compress('ABCDEF',</span> <span class="pre">[1,0,1,0,1,1])</span> <span class="pre">--&gt;</span> <span class="pre">A</span> <span class="pre">C</span> <span class="pre">E</span> <span class="pre">F</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#itertools.dropwhile" title="itertools.dropwhile"><code class="xref py py-func docutils literal"><span class="pre">dropwhile()</span></code></a></td>
+<td>pred, seq</td>
+<td>seq[n], seq[n+1], starting when pred fails</td>
+<td><code class="docutils literal"><span class="pre">dropwhile(lambda</span> <span class="pre">x:</span> <span class="pre">x&lt;5,</span> <span class="pre">[1,4,6,4,1])</span> <span class="pre">--&gt;</span> <span class="pre">6</span> <span class="pre">4</span> <span class="pre">1</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#itertools.filterfalse" title="itertools.filterfalse"><code class="xref py py-func docutils literal"><span class="pre">filterfalse()</span></code></a></td>
+<td>pred, seq</td>
+<td>elements of seq where pred(elem) is false</td>
+<td><code class="docutils literal"><span class="pre">filterfalse(lambda</span> <span class="pre">x:</span> <span class="pre">x%2,</span> <span class="pre">range(10))</span> <span class="pre">--&gt;</span> <span class="pre">0</span> <span class="pre">2</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">8</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#itertools.groupby" title="itertools.groupby"><code class="xref py py-func docutils literal"><span class="pre">groupby()</span></code></a></td>
+<td>iterable[, keyfunc]</td>
+<td>sub-iterators grouped by value of keyfunc(v)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#itertools.islice" title="itertools.islice"><code class="xref py py-func docutils literal"><span class="pre">islice()</span></code></a></td>
+<td>seq, [start,] stop [, step]</td>
+<td>elements from seq[start:stop:step]</td>
+<td><code class="docutils literal"><span class="pre">islice('ABCDEFG',</span> <span class="pre">2,</span> <span class="pre">None)</span> <span class="pre">--&gt;</span> <span class="pre">C</span> <span class="pre">D</span> <span class="pre">E</span> <span class="pre">F</span> <span class="pre">G</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#itertools.starmap" title="itertools.starmap"><code class="xref py py-func docutils literal"><span class="pre">starmap()</span></code></a></td>
+<td>func, seq</td>
+<td>func(*seq[0]), func(*seq[1]), ...</td>
+<td><code class="docutils literal"><span class="pre">starmap(pow,</span> <span class="pre">[(2,5),</span> <span class="pre">(3,2),</span> <span class="pre">(10,3)])</span> <span class="pre">--&gt;</span> <span class="pre">32</span> <span class="pre">9</span> <span class="pre">1000</span></code></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#itertools.takewhile" title="itertools.takewhile"><code class="xref py py-func docutils literal"><span class="pre">takewhile()</span></code></a></td>
+<td>pred, seq</td>
+<td>seq[0], seq[1], until pred fails</td>
+<td><code class="docutils literal"><span class="pre">takewhile(lambda</span> <span class="pre">x:</span> <span class="pre">x&lt;5,</span> <span class="pre">[1,4,6,4,1])</span> <span class="pre">--&gt;</span> <span class="pre">1</span> <span class="pre">4</span></code></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#itertools.tee" title="itertools.tee"><code class="xref py py-func docutils literal"><span class="pre">tee()</span></code></a></td>
+<td>it, n</td>
+<td>it1, it2, ... itn  splits one iterator into n</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#itertools.zip_longest" title="itertools.zip_longest"><code class="xref py py-func docutils literal"><span class="pre">zip_longest()</span></code></a></td>
+<td>p, q, ...</td>
+<td>(p[0], q[0]), (p[1], q[1]), ...</td>
+<td><code class="docutils literal"><span class="pre">zip_longest('ABCD',</span> <span class="pre">'xy',</span> <span class="pre">fillvalue='-')</span> <span class="pre">--&gt;</span> <span class="pre">Ax</span> <span class="pre">By</span> <span class="pre">C-</span> <span class="pre">D-</span></code></td>
+</tr>
+</tbody>
+</table>

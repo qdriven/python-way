@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="Github.css" type="text/css" />
+</head>
+<body>
+<h1 id="python-module---json">Python Module - json</h1>
+<p>json在http协议的调用中使用广泛，python自带的json库基本可以满足使用，json库主要的方法 其实就这个两个：</p>
+<ul>
+<li>dumps</li>
+<li>loads</li>
+</ul>
+<p># JSON dumps</p>
+<p>dumps 就是把python中的数据结构转换为json string</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> {
+    <span class="st">&quot;first&quot;</span>: <span class="dv">1</span>,
+    <span class="st">&quot;second&quot;</span>: <span class="dv">3</span>,
+    <span class="st">&quot;third&quot;</span>: [<span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">4</span>]
+}
+<span class="co">&quot;&quot;&quot;</span>
+<span class="co">dump dict to json string</span>
+<span class="co">&quot;&quot;&quot;</span>
+<span class="bu">print</span>(<span class="st">&quot;JSON:</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(json.dumps(data)))
+<span class="bu">print</span>(<span class="bu">type</span>(json.dumps(data)))</code></pre></div>
+<p>结果如下：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">JSON:{<span class="st">&quot;first&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;second&quot;</span>: <span class="dv">3</span>, <span class="st">&quot;third&quot;</span>: [<span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">4</span>]}
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;str&#39;</span><span class="op">&gt;</span> <span class="co"># 是个string 类型</span></code></pre></div>
+<h1 id="json-loads">json loads</h1>
+<p>loads 方法把json字符串加载成为python对象(dict,list)都可以</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">json_str <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span>
+<span class="st">{</span>
+<span class="st">    &quot;key&quot;:&quot;value&quot;,</span>
+<span class="st">    &quot;key_map&quot;:{&quot;nested&quot;:&quot;value&quot;},</span>
+<span class="st">    &quot;key_list&quot;:[&quot;v1&quot;,&quot;v2&quot;,&quot;v3&quot;]</span>
+<span class="st">}</span>
+<span class="st">&quot;&quot;&quot;</span>
+json_array <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span>
+<span class="st">[{&quot;k1&quot;:&quot;v1&quot;},{&quot;k2&quot;:&quot;v2&quot;},{&quot;k2&quot;:&quot;v2&quot;}]</span>
+<span class="st">&quot;&quot;&quot;</span>
+<span class="co"># load json</span>
+result <span class="op">=</span> json.loads(json_str)
+result1 <span class="op">=</span> json.loads(json_array)
+<span class="bu">print</span>(result)
+<span class="bu">print</span>(<span class="bu">type</span>(result))
+<span class="bu">print</span>(result1)
+<span class="bu">print</span>(<span class="bu">type</span>(result1))</code></pre></div>
+<p>运行的结果是：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">{<span class="st">&#39;key&#39;</span>: <span class="st">&#39;value&#39;</span>, <span class="st">&#39;key_map&#39;</span>: {<span class="st">&#39;nested&#39;</span>: <span class="st">&#39;value&#39;</span>}, <span class="st">&#39;key_list&#39;</span>: [<span class="st">&#39;v1&#39;</span>, <span class="st">&#39;v2&#39;</span>, <span class="st">&#39;v3&#39;</span>]}
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;dict&#39;</span><span class="op">&gt;</span>
+[{<span class="st">&#39;k1&#39;</span>: <span class="st">&#39;v1&#39;</span>}, {<span class="st">&#39;k2&#39;</span>: <span class="st">&#39;v2&#39;</span>}, {<span class="st">&#39;k2&#39;</span>: <span class="st">&#39;v2&#39;</span>}]
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;list&#39;</span><span class="op">&gt;</span></code></pre></div>
+<h1 id="json-如何dumpsloads-一个python的类">json 如何dumps/loads 一个python的类</h1>
+<p>以上简单介绍了json的dumps和loads的方法，下面就有一个问题，是否可以直接dumps 一个python类到json字符串，或者loads json字符串创建制定类型的python类呢？ 显然这肯定可以是的，那就动手试试。</p>
+<ul>
+<li>定义一个类</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Person:
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):
+        <span class="va">self</span>.name <span class="op">=</span> name
+
+    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):
+        <span class="cf">return</span> <span class="st">&quot;</span><span class="sc">{{</span><span class="st">&#39;name&#39;:&#39;</span><span class="sc">{}</span><span class="st">&#39;</span><span class="sc">}}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name)</code></pre></div>
+<ul>
+<li>dumps Person instance</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">p <span class="op">=</span> Person(<span class="st">&quot;patrick&quot;</span>)
+<span class="cf">try</span>:
+    <span class="bu">print</span>(json.dumps(p))
+<span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> err:
+    <span class="bu">print</span>(<span class="st">&#39;ERROR:&#39;</span>, err)</code></pre></div>
+<p>结果是：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ERROR: Object of <span class="bu">type</span> <span class="st">&#39;Person&#39;</span> <span class="kw">is</span> <span class="kw">not</span> JSON serializable</code></pre></div>
+<p>很显然不能直接dumps一个python的类，怎么办？使用dumps中的default参数 自定义一个转换的方法就可以了，</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">p <span class="op">=</span> Person(<span class="st">&quot;patrick&quot;</span>)
+<span class="kw">def</span> custom_converter(obj):
+    d <span class="op">=</span> {
+        <span class="st">&#39;__class__&#39;</span>: obj.__class__.<span class="va">__name__</span>,
+        <span class="st">&#39;__module__&#39;</span>: obj.__module__,
+    }
+    d.update(obj.__dict__)
+    <span class="cf">return</span> d
+
+<span class="bu">print</span>(<span class="st">&quot;encoding Person:&quot;</span>, json.dumps(p, default<span class="op">=</span>custom_converter))</code></pre></div>
+<p>结果是：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">encoding Person: {<span class="st">&quot;__class__&quot;</span>: <span class="st">&quot;Person&quot;</span>, <span class="st">&quot;__module__&quot;</span>: <span class="st">&quot;__main__&quot;</span>, <span class="st">&quot;name&quot;</span>: <span class="st">&quot;patrick&quot;</span>}</code></pre></div>
+<p>这样就成功转化为JSON字符串了.</p>
+<ul>
+<li>loads</li>
+</ul>
+<p>loads实际是dumps的相反过程，定一个dict to object 方法就可以，使用方法如下：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+<span class="co">## module name is json_adv, 同时Person 类在json_adv 文件中</span>
+<span class="kw">def</span> dict_to_object(d):
+    <span class="cf">if</span> <span class="st">&#39;__class__&#39;</span> <span class="kw">in</span> d:
+        class_name <span class="op">=</span> d.pop(<span class="st">&#39;__class__&#39;</span>)
+        module_name <span class="op">=</span> d.pop(<span class="st">&#39;__module__&#39;</span>)
+        module <span class="op">=</span> <span class="bu">__import__</span>(module_name)
+        <span class="bu">print</span>(<span class="st">&#39;MODULE:&#39;</span>, module.<span class="va">__name__</span>)
+        class_ <span class="op">=</span> <span class="bu">getattr</span>(module, class_name)
+        <span class="bu">print</span>(<span class="st">&#39;CLASS:&#39;</span>, class_)
+        args <span class="op">=</span> {
+            key: value
+            <span class="cf">for</span> key, value <span class="kw">in</span> d.items()
+        }
+        <span class="bu">print</span>(<span class="st">&#39;INSTANCE ARGS:&#39;</span>, args)
+        inst <span class="op">=</span> class_(<span class="op">**</span>args)
+    <span class="cf">else</span>:
+        inst <span class="op">=</span> d
+    <span class="cf">return</span> inst
+
+
+encoded_object <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span>
+<span class="st">    [{&quot;name&quot;: &quot;instance value goes here&quot;,</span>
+<span class="st">      &quot;__module__&quot;: &quot;json_adv&quot;, &quot;__class__&quot;: &quot;Person&quot;}]</span>
+<span class="st">    &#39;&#39;&#39;</span>
+
+myobj_instance <span class="op">=</span> json.loads(
+    encoded_object,
+    object_hook<span class="op">=</span>dict_to_object,
+)
+<span class="bu">print</span>(myobj_instance)</code></pre></div>
+<p>结果：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">[{<span class="st">&#39;name&#39;</span>:<span class="st">&#39;instance value goes here&#39;</span>}]</code></pre></div>
+</body>
+</html>

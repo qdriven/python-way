@@ -1,0 +1,19 @@
+1 2e382931ee0f0b4b98cd707f41c408a11e020c9c 1542944661313449000
+POST /project/%E6%90%AC%E5%AE%B6-API-Test HTTP/1.1
+Content-Type: application/json
+X-Gitlab-Event: Push Hook
+Connection: close
+Host: 10.8.1.43:8080
+Content-Length: 2581
+
+{"object_kind":"push","event_name":"push","before":"197a4504f4f6feb042b1ca6919769d74c5ce188a","after":"0ab7741334383bbb6c4a9be1450e099d0a8c1e46","ref":"refs/heads/test","checkout_sha":"0ab7741334383bbb6c4a9be1450e099d0a8c1e46","message":null,"user_id":1509,"user_name":"陈守璐","user_username":"chenshoulu001","user_email":"chenshoulu001@ke.com","user_avatar":"https://www.gravatar.com/avatar/89232ece89e0e7ea74105f51d6b0d395?s=80\u0026d=identicon","project_id":5409,"project":{"id":5409,"name":"ke-community","description":" 社区服务应用（JAVA）后端框架（包含：搬家）","web_url":"http://git.lianjia.com/ptc-csd/ke-community","avatar_url":null,"git_ssh_url":"git@git.lianjia.com:ptc-csd/ke-community.git","git_http_url":"http://git.lianjia.com/ptc-csd/ke-community.git","namespace":"ptc-csd","visibility_level":0,"path_with_namespace":"ptc-csd/ke-community","default_branch":"master","ci_config_path":null,"homepage":"http://git.lianjia.com/ptc-csd/ke-community","url":"git@git.lianjia.com:ptc-csd/ke-community.git","ssh_url":"git@git.lianjia.com:ptc-csd/ke-community.git","http_url":"http://git.lianjia.com/ptc-csd/ke-community.git"},"commits":[{"id":"5d5b61df75d967168eb77f8904995dfc1f1e985c","message":"后台管理-免分佣配置-bug fix\n","timestamp":"2018-11-23T11:42:19+08:00","url":"http://git.lianjia.com/ptc-csd/ke-community/commit/5d5b61df75d967168eb77f8904995dfc1f1e985c","author":{"name":"wangwangxiaoteng","email":"wangwangxiaoteng001@ke.com"},"added":[],"modified":["ke-community-move-service/src/main/java/com/lianjia/cto/ke/service/lifemanage/ConfCommunityFreeCommissionService.java"],"removed":[]},{"id":"0ab7741334383bbb6c4a9be1450e099d0a8c1e46","message":"Merge branch 'dev_v2.3.1' into 'test'\n\n后台管理-免分佣配置-bug fix\n\nSee merge request ptc-csd/ke-community!36","timestamp":"2018-11-23T11:44:35+08:00","url":"http://git.lianjia.com/ptc-csd/ke-community/commit/0ab7741334383bbb6c4a9be1450e099d0a8c1e46","author":{"name":"陈守璐","email":"chenshoulu001@ke.com"},"added":[],"modified":["ke-community-move-service/src/main/java/com/lianjia/cto/ke/service/lifemanage/ConfCommunityFreeCommissionService.java"],"removed":[]}],"total_commits_count":2,"repository":{"name":"ke-community","url":"git@git.lianjia.com:ptc-csd/ke-community.git","description":" 社区服务应用（JAVA）后端框架（包含：搬家）","homepage":"http://git.lianjia.com/ptc-csd/ke-community","git_http_url":"http://git.lianjia.com/ptc-csd/ke-community.git","git_ssh_url":"git@git.lianjia.com:ptc-csd/ke-community.git","visibility_level":0}}
+2 2e382931ee0f0b4b98cd707f41c408a11e020c9c 1542944661313449000 1052252533
+HTTP/1.1 200 OK
+Connection: close
+Date: Fri, 23 Nov 2018 03:44:21 GMT
+X-Content-Type-Options: nosniff
+Server: Jetty(9.4.z-SNAPSHOT)
+
+50
+{"id":12,"category":"c1","summary":"summary","detail":"detail","complete":false}
+0

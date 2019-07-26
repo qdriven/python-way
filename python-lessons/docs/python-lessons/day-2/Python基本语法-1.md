@@ -4,16 +4,15 @@
 
 ## Python 打印
 
-### print
+### Print
 
-### input
+### Input
 
 ## Python 条件
 
-### if/else
+### If/else
 
 ## python 函数
 
 ## python缩进
 
-*XMind: ZEN - Trial Version*

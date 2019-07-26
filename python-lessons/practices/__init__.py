@@ -1,0 +1,3 @@
+import docstring_example
+
+help(docstring_example)

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="Github.css" type="text/css" />
+</head>
+<body>
+<h1 id="python-module---enum">Python Module - enum</h1>
+<p>enum module可以用来很好的定义一个可以迭代和比较的类型. 下面主要介绍enum的</p>
+<ul>
+<li>create 创建</li>
+<li>iteration 迭代</li>
+<li>complex enum value 复杂enum值</li>
+</ul>
+<h2 id="创建enum">创建enum</h2>
+<ul>
+<li>继承enum.Enum就可以</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> BugStatus(enum.Enum):
+    new <span class="op">=</span> <span class="dv">7</span>
+    incomplete <span class="op">=</span> <span class="dv">6</span>
+    invalid <span class="op">=</span> <span class="dv">5</span>
+    wont_fix <span class="op">=</span> <span class="dv">4</span>
+    in_progress <span class="op">=</span> <span class="dv">3</span>
+    fix_committed <span class="op">=</span> <span class="dv">2</span>
+    fix_released <span class="op">=</span> <span class="dv">1</span></code></pre></div>
+<p>运行如下程序就可以查看enum的值：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&#39;Member name: </span><span class="sc">{}</span><span class="st">,Member value: </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(BugStatus.wont_fix, BugStatus.wont_fix.value))</code></pre></div>
+<ul>
+<li>自定义enum.Enum</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">BugStatusP <span class="op">=</span> enum.Enum(
+    value<span class="op">=</span><span class="st">&quot;BugStatusP&quot;</span>,
+    names<span class="op">=</span>(<span class="st">&#39;a b c d e&#39;</span>)
+)</code></pre></div>
+<p>运行如下程序可以查看enum的值：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+<span class="cf">for</span> status <span class="kw">in</span> BugStatusP:
+    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{:15}</span><span class="st">=</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(status.name, status.value))</code></pre></div>
+<h2 id="enum-iteration">enum iteration</h2>
+<p>enum 可以理解为类似于name和value的一个dict，所以使用如下方法可以遍历迭代：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+<span class="cf">for</span> status <span class="kw">in</span> BugStatus:
+    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{:15}</span><span class="st">=</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(status.name, status.value))</code></pre></div>
+<h2 id="复杂的enum-value类型">复杂的enum value类型</h2>
+<p>enum的value可以是一个复杂的值，如下例：</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> BugStatusC(enum.Enum):
+
+    new <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">7</span>,
+        <span class="st">&#39;transitions&#39;</span>: [
+            <span class="st">&#39;incomplete&#39;</span>,
+            <span class="st">&#39;invalid&#39;</span>,
+            <span class="st">&#39;wont_fix&#39;</span>,
+            <span class="st">&#39;in_progress&#39;</span>,
+        ],
+    }
+    incomplete <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">6</span>,
+        <span class="st">&#39;transitions&#39;</span>: [<span class="st">&#39;new&#39;</span>, <span class="st">&#39;wont_fix&#39;</span>],
+    }
+    invalid <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">5</span>,
+        <span class="st">&#39;transitions&#39;</span>: [<span class="st">&#39;new&#39;</span>],
+    }
+    wont_fix <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">4</span>,
+        <span class="st">&#39;transitions&#39;</span>: [<span class="st">&#39;new&#39;</span>],
+    }
+    in_progress <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">3</span>,
+        <span class="st">&#39;transitions&#39;</span>: [<span class="st">&#39;new&#39;</span>, <span class="st">&#39;fix_committed&#39;</span>],
+    }
+    fix_committed <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">2</span>,
+        <span class="st">&#39;transitions&#39;</span>: [<span class="st">&#39;in_progress&#39;</span>, <span class="st">&#39;fix_released&#39;</span>],
+    }
+    fix_released <span class="op">=</span> {
+        <span class="st">&#39;num&#39;</span>: <span class="dv">1</span>,
+        <span class="st">&#39;transitions&#39;</span>: [<span class="st">&#39;new&#39;</span>],
+    }
+
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, vals):
+        <span class="va">self</span>.num <span class="op">=</span> vals[<span class="st">&#39;num&#39;</span>]
+        <span class="va">self</span>.transitions <span class="op">=</span> vals[<span class="st">&#39;transitions&#39;</span>]
+
+    <span class="kw">def</span> can_transition(<span class="va">self</span>, new_state):
+        <span class="cf">return</span> new_state.name <span class="kw">in</span> <span class="va">self</span>.transitions
+
+<span class="bu">print</span>(<span class="st">&#39;Name:&#39;</span>, BugStatusC.in_progress)
+<span class="bu">print</span>(<span class="st">&#39;Value:&#39;</span>, BugStatusC.in_progress.value)
+<span class="bu">print</span>(<span class="st">&#39;Custom attribute:&#39;</span>, BugStatusC.in_progress.transitions)
+<span class="bu">print</span>(<span class="st">&#39;Using attribute:&#39;</span>,
+      BugStatusC.in_progress.c</code></pre></div>
+<p>这个例子中 enum的一个value实际上一个dict，包含了相对比较复杂的数据结构</p>
+<p>但是无论如何变化，可以将enum总结了</p>
+<p>1.类似一个dict 2.可以直接通过enum的name访问预定义name的值 3.和dict一样可以遍历</p>
+</body>
+</html>
