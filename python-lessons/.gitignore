@@ -167,3 +167,14 @@ venv.bak/
 [Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json
+/practices/database/all-users-ont-1.csv
+/practices/database/insert-10001.txt
+/practices/database/insert-13001.txt
+/practices/database/insert-30001.txt
+/practices/database/insert-all.txt
+/practices/database/all-users-ont-1000.csv
+/practices/database/insert-4001.txt
+/practices/database/all-users-ont.csv
+/practices/database/insert-6001.txt
+/practices/database/insert-2001.txt
+/practices/database/insert-20001.txt
