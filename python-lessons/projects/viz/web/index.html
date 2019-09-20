@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="js/global.js"></script>
+    <title>VizServe</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <style type="text/css">
+        #notebook_list {
+            margin-top:2%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        VizServe
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>VizServe</h1>
+                        <p>Welcome to VizServe. Please select one of the notebooks below to take a look at the data submitted.</p>
+                        <button class="btn btn-primary btn-lg" id="add_notebook_btn">
+                          <span class="glyphicon glyphicon-plus"></span> Add Notebook
+                        </button>
+                        <div class="list-group" id="notebook_list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="js/Bootstrapap.min.js"></script> -->
+
+    <!-- Menu Toggle Script -->
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

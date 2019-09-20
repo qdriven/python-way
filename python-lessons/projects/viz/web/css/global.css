@@ -1,0 +1,22 @@
+* {
+	font-family: sans-serif;
+}
+
+iframe{
+	border: none;
+	height: 500px;
+	width: 800px;
+}
+
+.error_panel {
+	text-align:center;
+	width: 100%;
+	background-color: #ED8C77;
+	border: 1px solid red;
+	padding: 3px;
+	font-size: 120%;
+}
+
+.hidden {
+	display:none;
+}
