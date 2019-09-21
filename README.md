@@ -1,4 +1,4 @@
-# Python For Tester
+# Python Way for different level
 
 这个教程主要对象是测试人员，希望通过教程能够达到如下目的:
 
