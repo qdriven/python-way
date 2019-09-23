@@ -2,26 +2,18 @@
 
 """
 -------------------------------------------------
-   File Name：     basic_python
+   File Name：     python_modules
    Description :
    Author :        patrick
-   date：          2019/7/14
+   date：          2019/9/22
 -------------------------------------------------
    Change Activity:
-                   2019/7/14:
+                   2019/9/22:
 -------------------------------------------------
 """
+from turtle import Turtle
+
 __author__ = 'patrick'
 
-"""
-1.保留字
-2.变量
-3.control flow
-4.type
-5.string
-"""
 
-
-def reserve_word():
-    print("hello")
-
+t=Turtle()
