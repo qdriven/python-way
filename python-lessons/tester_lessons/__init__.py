@@ -2,17 +2,13 @@
 
 """
 -------------------------------------------------
-   File Name：     hello_world
+   File Name：     __init__.py
    Description :
    Author :        patrick
-   date：          2019/6/27
+   date：          2019/9/27
 -------------------------------------------------
    Change Activity:
-                   2019/6/27:
+                   2019/9/27:
 -------------------------------------------------
 """
 __author__ = 'patrick'
-
-
-print("Hello World!")
-print("First Python program!!")
