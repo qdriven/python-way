@@ -1,4 +1,4 @@
-Django==2.2
+Django==2.2.4
 django-bootstrap3==11.0.0
 gitdb2==2.0.5
 GitPython==2.1.11
