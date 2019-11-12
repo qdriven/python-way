@@ -24,12 +24,12 @@ class Animal(object):
 
 class Dog(Animal):
     def greet(self):
-        print('WangWang.., I am %s.' % self.name)
+        print('Wang Wang.., I am %s.' % self.name)
 
 
 class Cat(Animal):
     def greet(self):
-        print('MiaoMiao.., I am %s' % self.name)
+        print('Miao Miao.., I am %s' % self.name)
 
 
 def hello(animal):
