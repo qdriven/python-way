@@ -14,7 +14,9 @@
 from typing import Iterable, Any, Type
 
 __author__ = 'patrick'
-
+"""
+ToDo: Dive it and Learn Design Pattern On it
+"""
 
 class MagicMethodClass:
     _instance_dict = dict()
