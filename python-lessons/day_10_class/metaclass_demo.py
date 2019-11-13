@@ -42,8 +42,7 @@ class PrefixMetaClass(type):
 
 
 class FooMeta(metaclass=PrefixMetaClass):
-
-   #  __metaclass__=PrefixMetaClass
+    #  __metaclass__=PrefixMetaClass
 
     name = "foo"
 
