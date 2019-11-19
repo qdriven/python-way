@@ -8,3 +8,9 @@ tests:
   - test_desc: test3
     input: {"k1":"v3"}
     expected: {"k1":"v3"}
+  - test_desc: test4
+    input:
+      p1: p2
+      p2: p3
+    expected:
+      e1: e2

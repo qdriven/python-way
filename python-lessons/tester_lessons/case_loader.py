@@ -30,20 +30,21 @@ def load_cases_from_excel(path="./api_testcases.xlsx"):
     ws = wb.active
     count = 0
     headers = []
-    result = []
+    case_result = []
     for row in ws.rows:
         if count == 0:
             print(row)
             for item in row:
                 headers.append(item.value)
-        count += 1
-
+            count += 1
+            continue
         col_count = 0
         tup = tuple()
         for column in row:
             tup += (yaml.safe_load(column.value),)
-        result.append(tup)
-    return result
+        case_result.append(tup)
+        count += 1
+    return case_result
 
 
 def load_case_by_yml(path):
