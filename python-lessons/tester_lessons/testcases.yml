@@ -1,0 +1,10 @@
+tests:
+  - test_desc: test1
+    input: {"k1":"v1"}
+    expected: {"k1":"v1"}
+  - test_desc: test2
+    input: {"k1":"v2"}
+    expected: {"k1":"v2"}
+  - test_desc: test3
+    input: {"k1":"v3"}
+    expected: {"k1":"v3"}
