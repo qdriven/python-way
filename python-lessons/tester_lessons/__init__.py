@@ -12,3 +12,12 @@
 -------------------------------------------------
 """
 __author__ = 'patrick'
+
+
+# class GETTER:
+#
+#     def __init__(self):
+#         self.num = 12
+#
+#     def issues(self):
+#         return range

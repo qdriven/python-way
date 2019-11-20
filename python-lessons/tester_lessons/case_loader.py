@@ -18,10 +18,6 @@ import yaml
 
 __author__ = 'patrick'
 
-## Load Test Case from Excel
-## Load Test Case from YML
-
-
 from openpyxl import load_workbook
 
 
