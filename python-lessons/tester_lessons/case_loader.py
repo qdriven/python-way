@@ -21,7 +21,7 @@ __author__ = 'patrick'
 from openpyxl import load_workbook
 
 
-def load_cases_from_excel(path="./api_testcases.xlsx"):
+def load_cases_from_excel(path="api_testcases.xlsx"):
     wb = load_workbook(path)
     ws = wb.active
     count = 0
@@ -47,7 +47,6 @@ def load_case_by_yml(path):
     with open(path, 'r') as stream:
         raw_yaml_result = yaml.safe_load(stream)
     cases = raw_yaml_result["tests"]
-    ## todo: add cases
     parameterized_case = []
     for case in cases:
         parameterized_case.append(tuple(case.values()))
