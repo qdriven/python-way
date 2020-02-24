@@ -21,7 +21,6 @@ from openpyxl.chart import LineChart, Reference
 
 MetricSample = namedtuple('MetricsData', 'start_time height num_tx')
 
-
 def read_metric_file(path="metrics.log"):
     """
     Read and Parse Metric Log
