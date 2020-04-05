@@ -15,7 +15,7 @@ def __load_pynotes(note_path):
 SLIDE_SEPERATOR = "---"
 
 
-def before_write_to_pitchme():
+def before_write_to_pitchme_and_python():
     try:
         subprocess.run(["mv", "PITCHME.md", "PITCHME_BNK.md"])
     except:
@@ -23,12 +23,13 @@ def before_write_to_pitchme():
     subprocess.run(["touch", "PITCHME.md"])
 
 
-def write_to_pitchme(note_path):
+def write_to_pitchme_and_python(note_path):
     """
     write to pitchme.md
     :return:
     """
     note_cells = __load_pynotes(note_path)
+    codes = []
     with open('PITCHME.md', 'a') as pitchme:
         for note_cell in note_cells:
             if note_cell.get("cell_type", "none") == 'markdown':
@@ -46,12 +47,17 @@ def write_to_pitchme(note_path):
                     pitchme.writelines(note_cell["source"])
                     pitchme.write("\n")
                     pitchme.write("```\n")
-
+                    codes.extend(note_cell["source"])
+    py_path = note_path.replace("ipynb","py")
+    print(py_path)
+    with open(py_path,'w') as py_file:
+        py_file.writelines("".join(codes))
 
 if __name__ == '__main__':
-    path = sys.argv[1]
-    if len(path) < 1:
+    pitchme_path = sys.argv[1]
+    python_file_path = pitchme_path
+    if len(pitchme_path) < 1:
         raise Exception("Your Input python Notes is not correct!!! "
                         "Usage is python pynote2pitch.py <your_file_path>")
-    before_write_to_pitchme()
-    write_to_pitchme(path)
+    before_write_to_pitchme_and_python()
+    write_to_pitchme_and_python(pitchme_path)
