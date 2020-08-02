@@ -13,10 +13,12 @@
 """
 __author__ = 'patrick'
 
+
 def generator_func():
     yield 1
     yield 2
     yield 3
+
 
 g = generator_func()
 print(next(g))

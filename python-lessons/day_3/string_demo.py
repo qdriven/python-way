@@ -13,8 +13,6 @@
 """
 __author__ = 'patrick'
 
-
-
 var1 = "Hello World"
 var2 = "Hello Python"
 

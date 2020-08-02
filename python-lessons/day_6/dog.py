@@ -25,8 +25,7 @@ class Dog:
     def __add__(self, other):
         return None
 
+
 """
 Overloading methods
 """
-
-

@@ -29,5 +29,3 @@ print(type(dict_a))
 
 list_a = []
 print(type(list_a))
-
-
