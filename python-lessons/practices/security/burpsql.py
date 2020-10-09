@@ -8,7 +8,7 @@ from pprint import pprint
 import subprocess
 import signal
 
-sqlmap_path = "<sqlmap.py_path>"
+sqlmap_path = "<AtlasTamper.py_path>"
 
 dbms=""
 cookie=""
@@ -29,7 +29,7 @@ parser.add_option("--domain", dest="domain",
                   help="Domain name", metavar="domainName")
 parser.add_option("-a", "--auto",
                   action="store_true", dest="auto", default=False,
-                  help="Answer 'Yes' to all sqlmap questions")
+                  help="Answer 'Yes' to all AtlasTamper questions")
 (options, args) = parser.parse_args()
 
 
